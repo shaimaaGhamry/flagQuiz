@@ -1,7 +1,46 @@
+
+body{
+   padding: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    
+    text-align: center;
+    justify-content: center;
+    
+    border-style: dashed;
+    border-width: 2px;
+    border-color: gray;
+    border-radius: 10px;
+}
+
+button{
+    margin: 10px;
+
+}
+
+#questionContainer{
+    display: flex;    
+    flex-direction: column;
+    
+    width: fit-content;
+    text-align: center;
+    justify-content: space-evenly;  
+
+
+
+}
 .choicesElement{
     display: flex;
-
     flex-direction: column;
+     
+}
 
-   
+#timeElementId{
+    color: red;
+}
+
+#statusElement{
+    color:blue;
+    font-weight: bold;
+    
 }

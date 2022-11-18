@@ -95,9 +95,9 @@ function answerSelected(targetButton){
 
 function updateStatusElement(status){
     if(status){
-        statuselement.innerText = "Correct Answer";
+        statusElement.innerText = "Correct Answer";
     }else{
-        statuselement.innerText = "Wrong Answer";
+        statusElement.innerText = "Wrong Answer";
     }
 }
 
@@ -159,7 +159,6 @@ function saveScore(inputNameValue){
 }
 
 function clearScore(inputNameValue){
-    alert("clear");
     localStorage.removeItem(inputNameValue);
     document.body.removeChild(document.querySelector("h1"));
     
@@ -201,18 +200,22 @@ function init(){
     score = 0;
     secondsLeft = 20;
 
+    //remove the old elements
     document.body.replaceChildren("");
 
+    //add header
     var headerElement = document.createElement("h1");
     headerElement.innerText = " Guess the Country";
     document.body.appendChild(headerElement);
 
+    //add start quiz button
     startBtn = document.createElement("button");
     startBtn.innerText = "Start Quiz";
     startBtn.id = "startBtnId";
     startBtn.addEventListener('click', startQuiz);
     document.body.appendChild(startBtn);
    
+    //add section to contains the questions, the choices, and the status
     var questionContainer = document.createElement("section");
     questionContainer.id = "questionContainer";
     
@@ -229,9 +232,9 @@ function init(){
     });
     questionContainer.appendChild(choicesListElement);
 
-    statuselement = document.createElement("section");
-    statuselement.id = "statusElement";
-    questionContainer.appendChild(statuselement);
+    statusElement = document.createElement("section");
+    statusElement.id = "statusElement";
+    questionContainer.appendChild(statusElement);
 
 
     document.body.appendChild(questionContainer);
